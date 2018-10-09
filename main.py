@@ -1,9 +1,3 @@
-def lsys0():                                #Définition du L-système avec ses paramètres
-    axiome = 'F'
-    prod = {'F':'F[+F][-F]'}
-    angleP, angleM = 30, -30
-    return axiome, prod, angleP, angleM
-
 def itergen(string, prod):
     '''I/ str, dict
 O/ str
