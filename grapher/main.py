@@ -6,8 +6,8 @@ O/ str
     stringNext = string
        
     for c in string:
-        stringNext = ''.join([c if c not in prod.keys() else prod[c] for c in string])      #On prend le caractère de la str, on cherche s'il a une prod associée,
-                                                                                                #on applique la prod si elle existe
+        stringNext = ''.join([c if c not in prod.keys() else prod[c] for c in string])          #On prend le caractère de la str, on cherche s'il a une prod associée,
+                                                                                                #On applique la prod si elle existe
     return stringNext
 
 def generator(lsys, N):
