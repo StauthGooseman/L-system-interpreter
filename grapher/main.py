@@ -1,7 +1,8 @@
 import turtle as trt
 
-D = 5
+D = 2
 p = 0.5
+x0, y0 = 0, -200
 
 def itergen(string, prod):
     '''I/ str, dict
@@ -36,30 +37,33 @@ O/ none
     '''
     
     drawnStr = lsysStr[:]
-    nigger = trt.Turtle()   #Génération de la base
-    ecwan = trt.Screen()
-    ecwan.title('L-system drawer')
-    ecwan.setup(1., 1.)
-    brackets = []           #On stockera les positions de "nigger" dès qu'on rencontrera un crochet dans le L-système généré
+    
+    abitbol = trt.Turtle()   #Génération de la base
+    
+    roiDeLaClasse = trt.Screen()            #Paramètres de la fenêtre
+    roiDeLaClasse.title('L-system drawer')
+    roiDeLaClasse.setup(1., 1.)
+    
+    brackets = []           #On stockera les positions de "abitbol" dès qu'on rencontrera un crochet dans le L-système généré
     
     lsystem = lsys()        #Import du L-système et de ses paramètres
     thetaL = lsystem[2]
     thetaR = lsystem[3]
     
-    grammar = {'F': "nigger.forward(D)",                  #Dessin usuels des L-systèmes
-               '+': "nigger.left(thetaL)",
-               '-': "nigger.right(thetaR)",
-               '[': "D *= p ; brackets.append((nigger.pos(), nigger.heading()))",
-               ']': "D /= p ; niggerPos, niggerDir = brackets.pop() ; nigger.setheading(niggerDir) ; nigger.setpos(niggerPos)"}
+    grammar = {'F': "abitbol.forward(D)",                  #Dessin usuels des L-systèmes
+               '+': "abitbol.left(thetaL)",
+               '-': "abitbol.right(thetaR)",
+               '[': "D *= p ; brackets.append((abitbol.pos(), abitbol.heading()))",
+               ']': "D /= p ; abitbolPos, abitbolDir = brackets.pop() ; abitbol.setheading(abitbolDir) ; abitbol.setpos(abitbolPos)"}
     
-    nigger.hideturtle()  #Paramètres généraux
-    nigger.left(90)      #On commence de haut en bas
-    nigger.speed(10)     #Le tracé est instantané si speed = 0
+    abitbol.hideturtle()  #Paramètres généraux
+    abitbol.left(90)      #On commence de haut en bas
+    abitbol.speed(10)     #Le tracé est instantané si speed = 0
     trt.tracer(False)
     
-    nigger.pu()
-    # nigger.setpos(0,-385)
-    nigger.pd()
+    abitbol.pu()
+    abitbol.setpos(x0, y0)
+    abitbol.pd()
     
     for char in drawnStr:
         try:
@@ -67,11 +71,11 @@ O/ none
         except KeyError:
             pass
     
-    ecwan.exitonclick()
+    roiDeLaClasse.exitonclick()
 
 def launcher(lsys = lsys0, N = 3):
     trt.TurtleScreen._RUNNING = True
     lsysSTR = generator(lsys, N)
     draw(lsysSTR, lsys)
 
-launcher(dragon, 15)
+launcher(Koch, 3)
