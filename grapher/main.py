@@ -1,3 +1,8 @@
+import turtle as trt
+
+D = 5
+p = 0.5
+
 def itergen(string, prod):
     '''I/ str, dict
 O/ str
@@ -23,3 +28,50 @@ O/ str
         string = itergen(string, prod)  #On applique N fois les productions sur la str
     
     return string
+
+def draw(lsysStr, lsys):
+    '''I/ str
+O/ none
+        Dessine le L-système avec la librairie Turtle, itéré N fois en utilisant le générateur (itergen(...), et generator(...))
+    '''
+    
+    drawnStr = lsysStr[:]
+    nigger = trt.Turtle()   #Génération de la base
+    ecwan = trt.Screen()
+    ecwan.title('L-system drawer')
+    ecwan.setup(1., 1.)
+    brackets = []           #On stockera les positions de "nigger" dès qu'on rencontrera un crochet dans le L-système généré
+    
+    lsystem = lsys()        #Import du L-système et de ses paramètres
+    thetaL = lsystem[2]
+    thetaR = lsystem[3]
+    
+    grammar = {'F': "nigger.forward(D)",                  #Dessin usuels des L-systèmes
+               '+': "nigger.left(thetaL)",
+               '-': "nigger.right(thetaR)",
+               '[': "D *= p ; brackets.append((nigger.pos(), nigger.heading()))",
+               ']': "D /= p ; niggerPos, niggerDir = brackets.pop() ; nigger.setheading(niggerDir) ; nigger.setpos(niggerPos)"}
+    
+    nigger.hideturtle()  #Paramètres généraux
+    nigger.left(90)      #On commence de haut en bas
+    nigger.speed(10)     #Le tracé est instantané si speed = 0
+    trt.tracer(False)
+    
+    nigger.pu()
+    # nigger.setpos(0,-385)
+    nigger.pd()
+    
+    for char in drawnStr:
+        try:
+            exec(grammar[char])
+        except KeyError:
+            pass
+    
+    ecwan.exitonclick()
+
+def launcher(lsys = lsys0, N = 3):
+    trt.TurtleScreen._RUNNING = True
+    lsysSTR = generator(lsys, N)
+    draw(lsysSTR, lsys)
+
+launcher(dragon, 15)
