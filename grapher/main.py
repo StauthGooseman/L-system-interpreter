@@ -3,6 +3,7 @@ import turtle as trt
 D = 2
 p = 0.5
 x0, y0 = 0, -200
+theta0 = 90
 
 def itergen(string, prod):
     '''I/ str, dict
@@ -51,13 +52,13 @@ O/ none
     thetaR = lsystem[3]
     
     grammar = {'F': "abitbol.forward(D)",                  #Dessin usuels des L-systèmes
-               '+': "abitbol.left(thetaL)",
-               '-': "abitbol.right(thetaR)",
+               '+': "abitbol.right(thetaL)",
+               '-': "abitbol.left(thetaR)",
                '[': "D *= p ; brackets.append((abitbol.pos(), abitbol.heading()))",
                ']': "D /= p ; abitbolPos, abitbolDir = brackets.pop() ; abitbol.setheading(abitbolDir) ; abitbol.setpos(abitbolPos)"}
     
     abitbol.hideturtle()  #Paramètres généraux
-    abitbol.left(90)      #On commence de haut en bas
+    abitbol.left(theta0)      #On commence de haut en bas
     abitbol.speed(10)     #Le tracé est instantané si speed = 0
     trt.tracer(False)
     
