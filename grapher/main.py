@@ -1,8 +1,8 @@
 import turtle as trt
 
-D = 2
-p = 0.5
-x0, y0 = 0, -200
+D = 100
+p = 0.8
+x0, y0 = 0, -385
 
 def itergen(string, prod):
     '''I/ str, dict
@@ -71,6 +71,7 @@ O/ none
         except KeyError:
             pass
     
+    roiDeLaClasse.update()
     roiDeLaClasse.exitonclick()
 
 def launcher(lsys = lsys0, N = 3):
@@ -78,4 +79,4 @@ def launcher(lsys = lsys0, N = 3):
     lsysSTR = generator(lsys, N)
     draw(lsysSTR, lsys)
 
-launcher(Koch, 3)
+launcher(lsys0, 7)
