@@ -1,16 +1,25 @@
 #Fichier accueillant les définitions des L-systèmes
 
 def lsys0():                            
-    axiome = 'F'
+    axiom = 'F'
     prod = {'F':'F[+F][-F]'}
     angleP, angleM = 30, 30
-    return axiome, prod, angleP, angleM
+    longueur, facteur = 100, 0.5
+    return axiom, prod, angleP, angleM, longueur, facteur
 
 def plant4():
     axiom='X'
     rules={'X':'F[+X][-X]FX','F':'FF'}
-    angleL, angleR = 25.7, 25.7    
-    return axiom, rules, angleL, angleR
+    angleL, angleR = 25, 25   
+    longueur, facteur = 40, 0.2
+    return axiom, rules, angleL, angleR, longueur, facteur
+
+def dragon():
+    axiom='FX'
+    rules={'F':'F','X':'X+YF+','Y':'-FX-Y'}
+    angleL, angleR = 90., 90.
+    longueur, facteur = 40, 0.8
+    return axiom,rules, angleL, angleR, longueur, facteur
 
 def pythagore():
     axiom='0'
@@ -28,13 +37,7 @@ def Sierpinski2():
     axiom='F-G-G'
     rules={'F':'F-G+F+G-F','G':'GG'}
     angleL, angleR = 120., 120.
-    return axiom,rules, angleL, angleR    
-
-def dragon():
-    axiom='FX'
-    rules={'F':'F','X':'X+YF+','Y':'-FX-Y'}
-    angleL, angleR = 90., 90.
-    return axiom,rules, angleL, angleR    
+    return axiom,rules, angleL, angleR
 
 def island():
     axiom='F+F+F+F'
