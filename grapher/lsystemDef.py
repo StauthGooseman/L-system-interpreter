@@ -3,9 +3,15 @@
 def lsys0():                            
     axiom = 'F'
     prod = {'F':'F[+F][-F]'}
-    angleP, angleM = 30, 30
+    angleP, angleM = 45, 45
     longueur, facteur = 100, 0.5
     return axiom, prod, angleP, angleM, longueur, facteur
+
+def Koch_curve():
+    axiom = 'F'
+    prod = {'F': 'F+F-F-F+F'}
+    angleP, angleM = 90, 90
+    return axiom, prod, angleP, angleM
 
 def plant4():
     axiom='X'
@@ -21,19 +27,13 @@ def dragon():
     longueur, facteur = 40, 0.8
     return axiom,rules, angleL, angleR, longueur, facteur
 
-def pythagore():
-    axiom='0'
-    rules={'0':'1[+0]-0','1':'11'}
-    angleL, angleR = 45., 45.
-    return axiom,rules, angleL, angleR    
-
-def Sierpinski1():
+def Sierpinski_arrowheadCurve():
     axiom='A'
     rules={'A':'+B-A-B+','B':'-A+B+A-'}
     angleL, angleR = 60., 60.
     return axiom,rules, angleL, angleR    
     
-def Sierpinski2():
+def Sierpinski_Triangle():
     axiom='F-G-G'
     rules={'F':'F-G+F+G-F','G':'GG'}
     angleL, angleR = 120., 120.

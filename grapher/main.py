@@ -1,8 +1,5 @@
 import turtle as trt
-
-D = 100
-p = 0.8
-x0, y0 = 0, -385
+exec(open("lsystemDef.py").read())
 
 def itergen(string, prod):
     '''I/ str, dict
@@ -51,6 +48,9 @@ O/ none
     thetaR = lsystem[3]
     
     grammar = {'F': "abitbol.forward(D)",                  #Dessin usuels des L-systèmes
+               'G': "abitbol.forward(D)",
+               'A': "abitbol.forward(D)",
+               'B': "abitbol.forward(D)",
                '+': "abitbol.left(thetaL)",
                '-': "abitbol.right(thetaR)",
                '[': "D *= p ; brackets.append((abitbol.pos(), abitbol.heading()))",
@@ -79,4 +79,8 @@ def launcher(lsys = lsys0, N = 3):
     lsysSTR = generator(lsys, N)
     draw(lsysSTR, lsys)
 
-launcher(lsys0, 7)
+
+D = 400
+p = 0.5
+x0, y0 = 0, -385
+launcher(lsys0, 7) #N conseillé entre 2 et 7 pour un temps de génération acceptable
