@@ -84,8 +84,8 @@ def launcher(lsys = pytha, N = 3):
     draw(lsysSTR, lsys)
 
 
-D = 10
+D = 2
 p = 0.5
-x0, y0 = 0,0                #(0, -385) conseillé
+x0, y0 = 0, -210               #(0, -385) conseillé
 theta0 = 90
-launcher(path_random, 10)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
+launcher(carreKoch, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable

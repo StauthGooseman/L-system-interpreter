@@ -27,6 +27,26 @@ def Koch_curve():
     angleP, angleM = 90, 90
     return axiom, prod, angleP, angleM
 
+def pytha3B():
+    axiom = 'F'
+    prod = {'F':['FF[+F][-F]']}
+    angleP, angleM = 40, 40
+    longueur, facteur = 100, 0.5
+    return axiom, prod, angleP, angleM, longueur, facteur
+
+def testAuPif():
+    axiom = 'F'
+    prod = {'F':['F[+F][-F]','F[++F][+F][--F]','F[+FF[-F]]','F']}
+    angleP, angleM = 35, 30
+    longueur, facteur = 100, 0.5
+    return axiom, prod, angleP, angleM, longueur, facteur
+
+def carreKoch():
+    axiom='F+F+F+F'
+    rules={'F':['F-F+F+F-F']}
+    angleL, angleR = 90, 90
+    return axiom,rules, angleL, angleR
+
 def plant4():
     axiom='X'
     rules={'X':['F[+X][-X]FX'],
