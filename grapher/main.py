@@ -53,6 +53,7 @@ O/ none
                'G': "abitbol.forward(D)",
                'A': "abitbol.forward(D)",
                'B': "abitbol.forward(D)",
+               'f': "abitbol.pu() ; abitbol.forward(D) ; abitbol.pd()",
                '+': "abitbol.left(thetaL)",
                '-': "abitbol.right(thetaR)",
                '[': "D *= p ; brackets.append((abitbol.pos(), abitbol.heading()))",
@@ -61,7 +62,7 @@ O/ none
     abitbol.hideturtle()  #Paramètres généraux
     abitbol.left(theta0)      #On commence de haut en bas
     abitbol.speed(10)     #Le tracé est instantané si speed = 0
-    #trt.tracer(False)
+    trt.tracer(False)
     
     abitbol.pu()
     abitbol.setpos(x0, y0)
@@ -84,8 +85,8 @@ def launcher(lsys = pytha, N = 3):
     draw(lsysSTR, lsys)
 
 
-D = 2
+D = 5
 p = 0.5
-x0, y0 = 0, -210               #(0, -385) conseillé
+x0, y0 = 0, 200              #(0, -385) conseillé
 theta0 = 90
-launcher(carreKoch, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
+launcher(peanoGosperCurve, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable

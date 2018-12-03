@@ -10,3 +10,4 @@ Références:
 	Papier génération procédurale			http://pcgbook.com/wp-content/uploads/chapter05.pdf
 	Thèse l-système labyrinthe				https://www.cs.ru.nl/bachelors-theses/2017/Thijs_Voncken___4223845___Procedural-maze-generation-an-L-System-based-approach.pdf
 	Modélisation informatique labyrinthe	https://ilay.org/yann/articles/maze/
+	Liste fractales Hausdorff				https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension

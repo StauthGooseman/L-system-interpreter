@@ -47,6 +47,20 @@ def carreKoch():
     angleL, angleR = 90, 90
     return axiom,rules, angleL, angleR
 
+def peanoGosperCurve():
+    axiom = 'A'
+    rules = {'A':['A-B--B+A++AA+B-'],
+             'B':['+A-BB--B-A++A+B']}
+    angleL, angleR = 60, 60
+    return axiom, rules, angleL, angleR
+
+def cantorSet():
+    axiom = 'F'
+    rules = {'F':['FfF'],
+             'f':['fff']}
+    angleP, angleM = 90, 90
+    return axiom, rules, angleP, angleM
+
 def plant4():
     axiom='X'
     rules={'X':['F[+X][-X]FX'],
