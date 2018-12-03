@@ -1,4 +1,6 @@
 import turtle as trt
+from random import randint
+import time
 exec(open("lsystemDef.py").read())
 
 def itergen(string, prod):
@@ -9,7 +11,7 @@ O/ str
     stringNext = string
        
     for c in string:
-        stringNext = ''.join([c if c not in prod.keys() else prod[c] for c in string])      #On prend le caractère de la str, on cherche s'il a une prod associée,
+        stringNext = ''.join([c if c not in prod.keys() else prod[c][randint(0,len(prod[c])-1)] for c in string])      #On prend le caractère de la str, on cherche s'il a une prod associée,
                                                                                                 #on applique la prod si elle existe
     return stringNext
 
@@ -57,13 +59,15 @@ O/ none
                ']': "D /= p ; abitbolPos, abitbolDir = brackets.pop() ; abitbol.setheading(abitbolDir) ; abitbol.setpos(abitbolPos)"}
     
     abitbol.hideturtle()  #Paramètres généraux
-    abitbol.left(90)      #On commence de haut en bas
+    abitbol.left(theta0)      #On commence de haut en bas
     abitbol.speed(10)     #Le tracé est instantané si speed = 0
-    trt.tracer(False)
+    #trt.tracer(False)
     
     abitbol.pu()
     abitbol.setpos(x0, y0)
     abitbol.pd()
+
+    time.sleep(0)
     
     for char in drawnStr:
         try:
@@ -74,13 +78,14 @@ O/ none
     roiDeLaClasse.update()
     roiDeLaClasse.exitonclick()
 
-def launcher(lsys = lsys0, N = 3):
+def launcher(lsys = pytha, N = 3):
     trt.TurtleScreen._RUNNING = True
     lsysSTR = generator(lsys, N)
     draw(lsysSTR, lsys)
 
 
-D = 400
+D = 10
 p = 0.5
-x0, y0 = 0, -385
-launcher(lsys0, 7) #N conseillé entre 2 et 7 pour un temps de génération acceptable
+x0, y0 = 0,0                #(0, -385) conseillé
+theta0 = 90
+launcher(path_random, 10)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
