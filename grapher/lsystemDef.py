@@ -1,5 +1,20 @@
 #Fichier accueillant les définitions des L-systèmes
 
+def mazeTry1():
+    axiom = '[--FG][-FG][+FG]FG'
+    prod = {'G': ['FG',
+                  '-FG',
+                  '+FG',
+                  '[-FG]FG',
+                  '[+FG]FG',
+                  '[-FG][+FG]',
+                  '[-FG][+FG]FG',
+                  '[-FG][+FG]FG',
+                  '[-FG][+FG]FG']}
+    angleP, angleM = 90, 90
+    longueur, facteur = 100, 0.5
+    return axiom, prod, angleP, angleM, longueur, facteur
+
 def path_random():
     axiom = 'F'
     prod = {'F':['F+F','FF','F-F']}
@@ -36,7 +51,10 @@ def pytha3B():
 
 def testAuPif():
     axiom = 'F'
-    prod = {'F':['F[+F][-F]','F[++F][+F][--F]','F[+FF[-F]]','F']}
+    prod = {'F':['F[+F][-F]',
+                 'F[++F][+F][--F]',
+                 'F[+FF[-F]]',
+                 'F']}
     angleP, angleM = 35, 30
     longueur, facteur = 100, 0.5
     return axiom, prod, angleP, angleM, longueur, facteur

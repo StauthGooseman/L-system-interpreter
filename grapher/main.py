@@ -57,13 +57,13 @@ O/ none
                '+': "abitbol.left(thetaL)",
                '-': "abitbol.right(thetaR)",
                '[': "D *= p ; brackets.append((abitbol.pos(), abitbol.heading()))",
-               ']': "D /= p ; abitbolPos, abitbolDir = brackets.pop() ; abitbol.setheading(abitbolDir) ; abitbol.setpos(abitbolPos)"}
+               ']': "D /= p ; abitbolPos, abitbolDir = brackets.pop() ; abitbol.pu() ; abitbol.setheading(abitbolDir) ; abitbol.setpos(abitbolPos) ; abitbol.pd()"}
     
     abitbol.hideturtle()  #Paramètres généraux
     abitbol.left(theta0)      #On commence de haut en bas
     abitbol.speed(10)     #Le tracé est instantané si speed = 0
-    trt.tracer(False)
-    
+    trt.tracer(True)
+
     abitbol.pu()
     abitbol.setpos(x0, y0)
     abitbol.pd()
@@ -85,8 +85,8 @@ def launcher(lsys = pytha, N = 3):
     draw(lsysSTR, lsys)
 
 
-D = 5
+D = 100
 p = 0.5
-x0, y0 = 0, 200              #(0, -385) conseillé
+x0, y0 = 0, -100              #(0, -385) conseillé
 theta0 = 90
-launcher(peanoGosperCurve, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
+launcher(mazeTry1, 10)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
