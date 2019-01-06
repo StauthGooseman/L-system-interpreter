@@ -62,7 +62,7 @@ O/ none
     abitbol.hideturtle()  #Paramètres généraux
     abitbol.left(theta0)      #On commence de haut en bas
     abitbol.speed(10)     #Le tracé est instantané si speed = 0
-    trt.tracer(True)
+    trt.tracer(False)
 
     abitbol.pu()
     abitbol.setpos(x0, y0)
@@ -85,8 +85,8 @@ def launcher(lsys = pytha, N = 3):
     draw(lsysSTR, lsys)
 
 
-D = 100
+D = 5
 p = 0.5
-x0, y0 = 0, -100              #(0, -385) conseillé
+x0, y0 = -100, 200            #(0, -385) conseillé
 theta0 = 90
-launcher(mazeTry1, 10)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
+launcher(peanoGosperCurve, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
