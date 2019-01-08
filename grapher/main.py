@@ -89,4 +89,4 @@ D = 5
 p = 0.5
 x0, y0 = -100, 200            #(0, -385) conseillé
 theta0 = 90
-launcher(peanoGosperCurve, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
+launcher(pytha, 5)  #N conseillé entre 2 et 7 pour un temps de génération acceptable
